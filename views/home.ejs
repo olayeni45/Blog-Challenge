@@ -5,8 +5,18 @@
 
         <% postArray.forEach( (item)=> { %>
             <h1> <%= item.title %> </h1>
-                <p> <%= item.post %> </p>
 
-                    <% } ) %>
+                <% if (item.post.length> 100) { %>
+                    <% var postUrl="/posts/" + item.title %>
 
-                        <%- include('./partials/footer'); -%>
+                        <p> <%= item.post.substring(0,100) +" ..." %>
+                                <a href="<%= postUrl %>">Read More</a>
+                            </p>
+
+                            <% } else{ %>
+                                <p> <%= item.post %> </p>
+                                    <% } %>
+
+                                        <% } ) %>
+
+                                            <%- include('./partials/footer'); -%>
