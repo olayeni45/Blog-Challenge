@@ -7,7 +7,7 @@
             <h1> <%= item.title %> </h1>
 
                 <% if (item.post.length> 100) { %>
-                    <% var postUrl="/posts/" + item.title %>
+                    <% var postUrl="/posts/" + item._id %>
 
                         <p> <%= item.post.substring(0,100) +" ..." %>
                                 <a href="<%= postUrl %>">Read More</a>
